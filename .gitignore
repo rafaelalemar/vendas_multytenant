@@ -1,0 +1,17 @@
+bin
+build
+include
+lib
+local
+man
+share
+Scripts
+.Python
+*.pyc
+*~
+*.sqlite3
+.idea
+.idea/
+.DS_Store
+.env
+vendas_multytenant/staticfiles

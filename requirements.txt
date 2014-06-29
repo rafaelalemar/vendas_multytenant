@@ -1,0 +1,4 @@
+Django==1.6.5
+django-tenant-schemas==1.4.7
+psycopg2==2.5.3
+python-decouple==2.2
