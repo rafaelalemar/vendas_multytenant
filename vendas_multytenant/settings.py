@@ -14,7 +14,7 @@ ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '.herokuapp.com']
 # Usar o South para preparar o banco nos testes?
 # True: Sim (default)
 # False: Não! Use o Syncdb
-SOUTH_TESTS_MIGRATE = False
+#SOUTH_TESTS_MIGRATE = False
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -33,6 +33,10 @@ DATABASES = {
     }
 }
 
+# Configuraćão do South para o multy-tenant
+SOUTH_DATABASE_ADAPTERS = {
+    'default': 'south.db.postgresql_psycopg2',
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -123,17 +127,20 @@ SHARED_APPS = (
     'tenant_schemas',  # mandatory
     'customers',  # you must list the app where your tenant model resides in
 
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'south',
 )
 
 TENANT_APPS = (
     # The following Django contrib apps must be in TENANT_APPS
     'django.contrib.contenttypes',
     'django.contrib.auth',
+    'south',
 )
 
 TENANT_MODEL = "customers.Client"  # app.Model
