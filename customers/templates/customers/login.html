@@ -58,7 +58,7 @@
 		<header id="header">
 
 			<div id="logo-group">
-				<span id="logo"> <img src="{{ STATIC_URL }}img/logo.png" alt="SmartAdmin"> </span>
+				<span id="logo"> <img src="{{ STATIC_URL }}img/{{ request.tenant.name }}_logo.png" width="246" height="52" alt="{{ request.tenant.name }}"> </span>
 			</div>
 
 			<span id="extr-page-header-space"> <span class="hidden-mobile">Need an account?</span> <a href="register.html" class="btn btn-danger">Create account</a> </span>
@@ -72,7 +72,7 @@
 
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
-						<h1 class="txt-color-red login-header-big">SmartAdmin</h1>
+						<h1 class="txt-color-red login-header-big">{{ request.tenant.name }}</h1>
 						<div class="hero">
 
 							<div class="pull-left login-desc-box-l">
