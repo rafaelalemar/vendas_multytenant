@@ -1,5 +1,9 @@
 # coding: utf-8
 from decouple import config
+from unipath import Path
+
+# Diretório raiz do projeto
+BASE_DIR = Path(__file__).parent.ancestor(1)
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = config('SECRET_KEY')
@@ -73,6 +77,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
+    BASE_DIR.child('template').child('media'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -140,7 +145,9 @@ TENANT_APPS = (
     # The following Django contrib apps must be in TENANT_APPS
     'django.contrib.contenttypes',
     'django.contrib.auth',
+    'bootstrap3',
     'south',
+    'public',
 )
 
 TENANT_MODEL = "customers.Client"  # app.Model

@@ -1,6 +1,13 @@
-from django.conf.urls import patterns
+#coding: utf-8
+from django.conf.urls import patterns, include, url
 from customers.views import TenantView
 
-urlpatterns = patterns('',
-   (r'^$', TenantView.as_view()),
+from django.contrib import admin
+admin.autodiscover()
+
+urlpatterns = patterns('customers.views',
+    url(r'^admin/', include(admin.site.urls)), ## URL da página de ADMIN
+
+    url(r'^$', 'login', name='login'),
+   # (r'^$', TenantView.as_view()),
 )

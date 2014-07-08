@@ -6,6 +6,12 @@ from customers.models import Client
 from random import choice
 
 
+from django.shortcuts import render
+
+def login(request):
+    return render(request, 'customers/login.html')
+
+
 class TenantView(FormView):
     form_class = GenerateUsersForm
     template_name = "index_tenant.html"

@@ -7,6 +7,8 @@ from customers.models import Client
 
 class HomeView(TemplateView):
     template_name = "index_public.html"
+    from vendas_multytenant import settings
+    print settings.BASE_DIR.child('template').child('media')
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
