@@ -4,12 +4,14 @@ from django.views.generic import FormView
 from customers.forms import GenerateUsersForm
 from customers.models import Client
 from random import choice
+from tenant_schemas.utils import remove_www_and_dev
 
 
 from django.shortcuts import render
 
 def login(request):
-    return render(request, 'customers/login.html')
+    context = {'hostname': remove_www_and_dev(request.get_host().split('.')[0])}
+    return render(request, 'customers/login.html', context)
 
 
 class TenantView(FormView):
