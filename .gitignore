@@ -15,3 +15,4 @@ Scripts
 .DS_Store
 .env
 vendas_multytenant/staticfiles
+log
