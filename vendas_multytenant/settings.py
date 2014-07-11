@@ -32,10 +32,10 @@ if HEROKU:
     DATABASES = {
         'default': {
             'ENGINE': 'tenant_schemas.postgresql_backend', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-            'NAME': 'dfr0mcvob4q9k3',               # Or path to database file if using sqlite3.
-            'USER': 'xrmrnxkeqpmapy',
-            'PASSWORD': 'SC-49XrBxRSvPbxzVoBftqoOil',
-            'HOST': 'ec2-54-221-243-6.compute-1.amazonaws.com',               # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+            'NAME': config('HEROKU_DATABASE_NAME'),               # Or path to database file if using sqlite3.
+            'USER': config('HEROKU_DATABASE_USER'),
+            'PASSWORD': config('HEROKU_DATABASE_PASSWORD'),
+            'HOST': config('HEROKU_DATABASE_HOST'),               # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
             'PORT': '',                                    # Set to empty string for default.
         }
     }
