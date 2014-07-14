@@ -1,3 +1,4 @@
+# coding: utf-8
 from django.contrib.auth.models import User
 from django.db.utils import DatabaseError
 from django.views.generic import FormView
@@ -5,13 +6,28 @@ from customers.forms import GenerateUsersForm
 from customers.models import Client
 from random import choice
 from tenant_schemas.utils import remove_www_and_dev
+from django.contrib.auth import authenticate
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
 
 
 from django.shortcuts import render
 
 def login(request):
+    # Documentação de autenticação na url abaixo:
+    # https://docs.djangoproject.com/en/dev/topics/auth/default/
     context = {'hostname': remove_www_and_dev(request.get_host().split('.')[0])}
-    return render(request, 'customers/login.html', context)
+    if request.user.is_authenticated():
+        return HttpResponseRedirect('/')
+    else:
+        return render(request, 'customers/login.html', context)
+
+
+@login_required(login_url='/login/')
+def main(request):
+    context = {'hostname': remove_www_and_dev(request.get_host().split('.')[0])}
+    return render(request, 'customers/index.html', context)
+
 
 
 class TenantView(FormView):

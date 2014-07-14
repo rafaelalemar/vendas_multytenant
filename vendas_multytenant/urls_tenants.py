@@ -8,6 +8,7 @@ admin.autodiscover()
 urlpatterns = patterns('customers.views',
     url(r'^admin/', include(admin.site.urls)), ## URL da página de ADMIN
 
-    url(r'^$', 'login', name='login'),
+    url(r'^login/', 'login', name='login'),
+    url(r'^$', 'main', name='main'),
    # (r'^$', TenantView.as_view()),
 )
