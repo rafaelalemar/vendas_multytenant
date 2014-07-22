@@ -61,7 +61,7 @@
 			<div id="logo-group">
 
 				<!-- PLACE YOUR LOGO HERE -->
-				<span id="logo"> <img src="{{ STATIC_URL }}img/logo.png" alt="SmartAdmin"> </span>
+				<span id="logo"> <img src="{{ STATIC_URL }}img/logo_tenants/logo_{{ hostname }}.png" alt="{{ hostname }}"> </span>
 				<!-- END LOGO PLACEHOLDER -->
 
 				<!-- Note: The activity badge color changes when clicked and resets the number to 0
@@ -138,12 +138,7 @@
 
 			<!-- pulled right: nav area -->
 			<div class="pull-right">
-				
-				<!-- collapse menu button -->
-				<div id="hide-menu" class="btn-header pull-right">
-					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
-				</div>
-				<!-- end collapse menu -->
+
 				
 				<!-- #MOBILE -->
 				<!-- Top menu profile link : this shows only when top menu is active -->
@@ -190,29 +185,15 @@
 
 				<!-- input: search field -->
 				<form action="search.html" class="header-search pull-right">
-					<input id="search-fld"  type="text" name="param" placeholder="Find reports and more" data-autocomplete='[
-					"ActionScript",
-					"AppleScript",
-					"Asp",
-					"BASIC",
-					"C",
-					"C++",
-					"Clojure",
-					"COBOL",
-					"ColdFusion",
-					"Erlang",
-					"Fortran",
-					"Groovy",
-					"Haskell",
-					"Java",
-					"JavaScript",
-					"Lisp",
-					"Perl",
-					"PHP",
-					"Python",
-					"Ruby",
-					"Scala",
-					"Scheme"]'>
+					<input id="search-fld"  type="text" name="param" placeholder="Busca por tela" data-autocomplete='[
+					"Formulário de Reserva",
+					"Aditivos",
+					"Aditivo: Distato",
+					"Aditivo: Cessão de Direito",
+					"Aditivo: Platinum",
+					"Cadastro de Clientes",
+					"Contratos",
+					"Unidades"]'>
 					<button type="submit">
 						<i class="fa fa-search"></i>
 					</button>
@@ -225,25 +206,6 @@
 					<span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
 				</div>
 				<!-- end fullscreen button -->
-
-				<!-- multiple lang dropdown : find all flags in the flags page -->
-				<ul class="header-dropdown-list hidden-xs">
-					<li>
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="{{ STATIC_URL }}img/blank.gif" class="flag flag-us" alt="United States"> <span> US </span> <i class="fa fa-angle-down"></i> </a>
-						<ul class="dropdown-menu pull-right">
-							<li class="active">
-								<a href="javascript:void(0);"><img src="{{ STATIC_URL }}img/blank.gif" class="flag flag-us" alt="United States"> US</a>
-							</li>
-							<li>
-								<a href="javascript:void(0);"><img src="{{ STATIC_URL }}img/blank.gif" class="flag flag-es" alt="Spanish"> Spanish</a>
-							</li>
-							<li>
-								<a href="javascript:void(0);"><img src="{{ STATIC_URL }}img/blank.gif" class="flag flag-de" alt="German"> German</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<!-- end multiple lang -->
 
 			</div>
 			<!-- end pulled right: nav area -->

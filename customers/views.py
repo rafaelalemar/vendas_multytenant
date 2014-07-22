@@ -13,7 +13,7 @@ def auth_login(request):
     context = {'hostname': remove_www_and_dev(request.get_host().split('.')[0])}
 
     if request.method == 'POST':
-        username = request.POST['email'].split('@')[0]
+        username = request.POST['email']
         password = request.POST['password']
         user = authenticate(username=username, password=password)
         if user is not None:
