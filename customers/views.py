@@ -35,4 +35,4 @@ def auth_logout(request):
 @login_required(login_url='/login/')
 def main(request):
     context = {'hostname': remove_www_and_dev(request.get_host().split('.')[0])}
-    return render(request, 'customers/index.html', context)
+    return render(request, 'customers/dashboard.html', context)
