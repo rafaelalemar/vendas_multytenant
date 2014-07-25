@@ -146,6 +146,7 @@ TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), '..', 'templates').repl
 SHARED_APPS = (
     'tenant_schemas',  # mandatory
     'customers',  # you must list the app where your tenant model resides in
+    'clientes',
 
     'django.contrib.admin',
     'django.contrib.auth',
